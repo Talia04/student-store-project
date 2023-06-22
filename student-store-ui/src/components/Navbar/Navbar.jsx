@@ -18,7 +18,7 @@ export default function Navbar() {
           </div>
           <div className="socials">
             <Icon icon="teenyicons:instagram-solid" color="white" />
-            </div>
+          </div>
           <div className="socials">
             <Icon icon="ic:outline-facebook" color="white" />
           </div>

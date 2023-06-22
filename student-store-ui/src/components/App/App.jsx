@@ -9,6 +9,7 @@ import ProductCard from "../ProductCard/ProductCard"
 import Hero from "../Hero/Hero"
 import SubNavBar from "../SubNavBar/SubNavBar"
 import About from "../About/About.jsx"
+import Contact from "../Contact/Contact"
 import "./App.css"
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
           <SubNavBar/>
           <Sidebar />
           <Home products={products}/>
+          <Contact />
             
   
         </main>
