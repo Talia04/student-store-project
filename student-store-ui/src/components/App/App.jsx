@@ -8,6 +8,7 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 import ProductCard from "../ProductCard/ProductCard"
 import Hero from "../Hero/Hero"
 import SubNavBar from "../SubNavBar/SubNavBar"
+import About from "../About/About.jsx"
 import "./App.css"
 
 export default function App() {
@@ -43,9 +44,9 @@ export default function App() {
           <Hero />
           <SubNavBar/>
           <Sidebar />
-          <Home />
-          <ProductGrid products={products}/>
-        
+          <Home products={products}/>
+            
+  
         </main>
       </BrowserRouter>
     </div>
