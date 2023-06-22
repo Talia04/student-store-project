@@ -7,6 +7,7 @@ import axios from 'axios'
 import ProductGrid from "../ProductGrid/ProductGrid"
 import ProductCard from "../ProductCard/ProductCard"
 import Hero from "../Hero/Hero"
+import SubNavBar from "../SubNavBar/SubNavBar"
 import "./App.css"
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
           
           <Navbar />
           <Hero />
+          <SubNavBar/>
           <Sidebar />
           <Home />
           <ProductGrid products={products}/>
