@@ -82,6 +82,27 @@
     align-items: center;
     justify-content: center;
     margin-left: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .sub-navbar .content .cart-button icon {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  .sub-navbar .content .cart-button icon i.material-icons {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  .sub-navbar .content .cart-button:hover {
+    background-color: #00b074; 
   }
 
   
