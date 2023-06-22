@@ -14,6 +14,9 @@ export default function App() {
           <Navbar />
           <Sidebar />
           <Home />
+
+          
+
         </main>
       </BrowserRouter>
     </div>
