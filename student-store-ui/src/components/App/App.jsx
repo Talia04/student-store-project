@@ -1,5 +1,4 @@
 import * as React from "react"
-import React, { useState, useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
@@ -10,17 +9,19 @@ import "./App.css"
 
 export default function App() {
 
-  useEffect(() => {
+  React.useEffect(() => {
     const storeURL = 'https://codepath-store-api.herokuapp.com/store';
     const fetchData = async () => {
       try {
         const response = await axios.get(storeURL);
-        console.log(response.data)
+        console.log("Success!");
+        console.log(response.data);
       } catch (error) {
-        console.log("Error:", error)
+        console.log("Error:", error);
       }
 
-    }
+    };
+    fetchData();
   }
   )
 
