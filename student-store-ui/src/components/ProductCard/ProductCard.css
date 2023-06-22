@@ -6,15 +6,19 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
+    width: 200px;
+    height: 200px;
+
   }
   
-  .media {
+  .product-image {
     width: 100%;
   }
   
-  .media img {
+  .product-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     cursor: pointer;
   }
   

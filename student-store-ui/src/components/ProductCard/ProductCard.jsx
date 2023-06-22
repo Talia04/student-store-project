@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./ProductCard.css"
 
 const ProductCard = ({
   product,
@@ -21,7 +22,7 @@ const ProductCard = ({
 
   return (
     <div className="product-card">
-      <div className="media">
+      <div className="product-image">
         <Link to={`/products/${id}`}>
           <img src={image} alt={name} />
         </Link>
