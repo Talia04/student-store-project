@@ -4,7 +4,8 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import axios from 'axios'
-import ProductGrid from ""
+import ProductGrid from "../ProductGrid/ProductGrid"
+import ProductCard from "../ProductCard/ProductCard"
 import "./App.css"
 
 export default function App() {
@@ -18,8 +19,8 @@ export default function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(storeURL);
-        const productsArray = response.data
-        setProducts(productsArray)
+        const productsArray = response.data;
+        setProducts(productsArray.products)
         console.log(productsArray);
       } catch (error) {
         setError('Sorry. No products found')
@@ -35,16 +36,18 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
-         
+          
           <Navbar />
           <Sidebar />
           <Home />
+          <ProductGrid products={products}/>
+         
+          
 
 
 
         </main>
       </BrowserRouter>
     </div>
-  )
-}
+  );
+};

@@ -1,20 +1,21 @@
 import React from 'react';
-import ProductCard from './ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 const ProductGrid = ({
   products,
-  handleAddItemToCart,
-  handleRemoveItemFromCart
+//   handleAddItemToCart,
+//   handleRemoveItemFromCart
 }) => {
   return (
     <div className="product-grid">
+        
       {products.map((product) => (
         <ProductCard
           key={product.id}
           product={product}
           showDescription={false}
-          handleAddItemToCart={handleAddItemToCart}
-          handleRemoveItemFromCart={handleRemoveItemFromCart}
+        //   handleAddItemToCart={handleAddItemToCart}
+        //   handleRemoveItemFromCart={handleRemoveItemFromCart}
         />
       ))}
     </div>
