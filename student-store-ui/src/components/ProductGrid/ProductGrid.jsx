@@ -3,7 +3,7 @@ import ProductCard from '../ProductCard/ProductCard';
 import "./ProductGrid.css"
 
 const ProductGrid = ({
-  products,
+  products
 //   handleAddItemToCart,
 //   handleRemoveItemFromCart
 }) => {
@@ -15,6 +15,7 @@ const ProductGrid = ({
           key={product.id}
           product={product}
           showDescription={false}
+          
         //   handleAddItemToCart={handleAddItemToCart}
         //   handleRemoveItemFromCart={handleRemoveItemFromCart}
         />

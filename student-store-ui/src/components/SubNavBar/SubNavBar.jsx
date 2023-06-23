@@ -2,16 +2,23 @@ import React from "react";
 
 import "./SubNavBar.css";
 
-export default function SubNavBar() {
-  return (
+export default function SubNavBar({searchText, setSearchText,handleSearch}) {
+   
+   return (
     <div className="sub-navbar">
 
         <div className="content"> 
 
             <div className="row">
                 <div className="search-bar">
-                    <input type="text" name="search" placeholder="Search" defaultValue=""/>
-                    <i className="material-icons">search</i>
+                    <input type="text" 
+                        name="search" 
+                        aria-label="Product Search"
+                        placeholder="Search" 
+                        value={searchText} 
+                        onChange={(e) => setSearchText(e.target.value)}
+                        />
+                    <i className="material-icons" onClick={handleSearch}>search</i>
                 </div>
             
                 <div className="links">

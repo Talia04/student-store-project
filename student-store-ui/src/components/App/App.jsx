@@ -16,17 +16,20 @@ import "./App.css"
 export default function App() {
 
   const [products, setProducts] = React.useState([]);
+  const [searchText, setSearchText] = React.useState("");
   const [error, setError] = React.useState('');
 
 
   React.useEffect(() => {
     const storeURL = 'https://codepath-store-api.herokuapp.com/store';
+    
     const fetchData = async () => {
       try {
         const response = await axios.get(storeURL);
         const productsArray = response.data;
+        console.log(response.data.products)
         setProducts(productsArray.products)
-        console.log(productsArray);
+        
       } catch (error) {
         setError('Sorry. No products found')
         console.log("Error:", error);
@@ -34,8 +37,15 @@ export default function App() {
 
     };
     fetchData();
+    
   },[]); // Empty dependency array to ensure this effect only runs once on component mount
   
+  const handleSearch = (event) => {
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setProducts(filteredProducts);
+  };
 
   return (
     <div className="app">
@@ -44,7 +54,7 @@ export default function App() {
           
           <Navbar />
           <Hero />
-          <SubNavBar/>
+          <SubNavBar searchText={searchText} setSearchText={setSearchText} handleSearch={handleSearch}/>
           <Sidebar />
           <Home products={products}/>
           <Contact />
