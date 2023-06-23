@@ -27,18 +27,25 @@ const ProductCard = ({
           <img src={image} alt={name} />
         </Link>
       </div>
-      <h3 className="product-name">{name}</h3>
-      <p className="product-price">${price.toFixed(2)}</p>
-      {showDescription && <p className="product-description">{description}</p>}
-      <div className="product-actions">
+      <div className="product-info">
+        <div className='main-info'>
+          <h3 className="product-name">{name}</h3>
+          <p className="product-price">${price.toFixed(2)}</p>
+          {showDescription && <p className="product-description">{description}</p>}
+        </div>
+        <div className="product-actions">
         <button className="add" onClick={handleAddToCart}>
-          Add to Cart
+          +
         </button>
         <button className="remove" onClick={handleRemoveFromCart}>
-          Remove from Cart
+          -
         </button>
       </div>
       {quantity > 0 && <div className="product-quantity">{quantity}</div>}
+      </div>
+      
+      
+      
     </div>
   );
 };

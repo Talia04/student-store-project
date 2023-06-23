@@ -54,7 +54,7 @@ export default function App() {
         <main>
           
           <Navbar />
-          <Hero />
+          
           <SubNavBar searchText={searchText}
             setSearchText={setSearchText} 
             handleSearch={handleSearch} 

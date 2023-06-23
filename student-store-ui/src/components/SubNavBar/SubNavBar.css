@@ -104,16 +104,17 @@
   color: #fff;
   background: #00c385;
   width: 100%;
+  font-size: auto;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 50px;
   border: none;
+  border-radius:2px;
   outline: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -123,7 +124,10 @@
   align-items: center;
   margin-right: 5px;
 }
-
+.cart-button a{
+  display: flex;
+  
+}
 .sub-navbar .content .cart-button .icon i.material-icons {
   font-size: 20px;
   margin-right: 5px;
