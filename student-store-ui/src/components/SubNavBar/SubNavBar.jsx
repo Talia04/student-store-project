@@ -2,9 +2,10 @@ import React from "react";
 
 import "./SubNavBar.css";
 
-export default function SubNavBar({searchText, setSearchText,handleSearch}) {
+export default function SubNavBar({searchText, setSearchText,handleSearch,setProducts, allProducts}) {
    const handleClearSearch = () =>{
         setSearchText("");
+        setProducts(allProducts);
    }
    return (
     <div className="sub-navbar">

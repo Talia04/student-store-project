@@ -16,6 +16,7 @@ import "./App.css"
 export default function App() {
 
   const [products, setProducts] = React.useState([]);
+  const [allProducts, setAllProducts] = React.useState([]);
   const [searchText, setSearchText] = React.useState("");
   const [error, setError] = React.useState('');
 
@@ -25,9 +26,10 @@ export default function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(storeURL);
-        const productsArray = response.data;
-        console.log(response.data.products)
-        setProducts(productsArray.products)
+        const productsArray = response.data.products;
+        console.log(productsArray)
+        setProducts(productsArray)
+        setAllProducts(productsArray)
         
       } catch (error) {
         setError('Sorry. No products found')
@@ -53,7 +55,12 @@ export default function App() {
           
           <Navbar />
           <Hero />
-          <SubNavBar searchText={searchText} setSearchText={setSearchText} handleSearch={handleSearch}/>
+          <SubNavBar searchText={searchText}
+            setSearchText={setSearchText} 
+            handleSearch={handleSearch} 
+            allProducts={allProducts}
+            setProducts={setProducts}
+          />
           <Sidebar />
           <Home products={products}/>
           <Contact />
