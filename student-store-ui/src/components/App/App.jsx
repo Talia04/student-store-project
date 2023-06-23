@@ -19,7 +19,6 @@ export default function App() {
   const [searchText, setSearchText] = React.useState("");
   const [error, setError] = React.useState('');
 
-
   React.useEffect(() => {
     const storeURL = 'https://codepath-store-api.herokuapp.com/store';
     
@@ -60,7 +59,6 @@ export default function App() {
           <Contact />
           <Footer/>
             
-  
         </main>
       </BrowserRouter>
     </div>

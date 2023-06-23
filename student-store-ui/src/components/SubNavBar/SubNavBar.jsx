@@ -3,7 +3,9 @@ import React from "react";
 import "./SubNavBar.css";
 
 export default function SubNavBar({searchText, setSearchText,handleSearch}) {
-   
+   const handleClearSearch = () =>{
+        setSearchText("");
+   }
    return (
     <div className="sub-navbar">
 
@@ -11,13 +13,24 @@ export default function SubNavBar({searchText, setSearchText,handleSearch}) {
 
             <div className="row">
                 <div className="search-bar">
-                    <input type="text" 
-                        name="search" 
-                        aria-label="Product Search"
-                        placeholder="Search" 
-                        value={searchText} 
-                        onChange={(e) => setSearchText(e.target.value)}
+                    <div className="search-box">
+                        <input type="text" 
+                            name="search" 
+                            aria-label="Product Search"
+                            placeholder="Search" 
+                            value={searchText} 
+                            onChange={(e) => setSearchText(e.target.value)}
                         />
+                        {searchText && (      //logic to ensure clear icon only appears when text is entered
+                            <span
+                                className="clear-icon"
+                                onClick={handleClearSearch}
+                            >
+                                ❌
+                            </span>
+                        )}
+                    </div>
+                    
                     <i className="material-icons" onClick={handleSearch}>search</i>
                 </div>
             
