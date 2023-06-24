@@ -11,7 +11,7 @@ import SubNavBar from "../SubNavBar/SubNavBar"
 import About from "../About/About.jsx"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
-import ProductView from "../ProductView/ProductView"
+import ProductDetail from "../ProductDetail/ProductDetail"
 import "./App.css"
 
 export default function App() {
@@ -68,14 +68,12 @@ export default function App() {
           <Routes>
 
             <Route
-              path='/'        element={<Home products={products}/>}
+              path='/'  element={<Home products={products}/>}
             />
             <Route 
-              path='/products/:productId' element={<ProductView products={products} isFetching={isFetching}/>}
+              path='/products/:productId' element={<ProductDetail products={products} isFetching={isFetching}/>}
               />
           </Routes>
-          
-
 
           <Contact />
           <Footer/>

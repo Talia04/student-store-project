@@ -23,7 +23,7 @@ const ProductCard = ({
 
   return (
     <div className="product-card">
-      <div className="product-image">
+      <div className="media">
         <Link to={`/products/${id}`}>
           <img src={image} alt={name} />
         </Link>
