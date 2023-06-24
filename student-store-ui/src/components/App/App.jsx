@@ -1,5 +1,5 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
@@ -11,6 +11,7 @@ import SubNavBar from "../SubNavBar/SubNavBar"
 import About from "../About/About.jsx"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
+import ProductView from "../ProductView/ProductView"
 import "./App.css"
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
   const [allProducts, setAllProducts] = React.useState([]);
   const [searchText, setSearchText] = React.useState("");
   const [error, setError] = React.useState('');
+  const [isFetching, setIsFetching] = React.useState(true);
 
   React.useEffect(() => {
     const storeURL = 'https://codepath-store-api.herokuapp.com/store';
@@ -27,7 +29,7 @@ export default function App() {
       try {
         const response = await axios.get(storeURL);
         const productsArray = response.data.products;
-        console.log(productsArray)
+        setIsFetching(false)
         setProducts(productsArray)
         setAllProducts(productsArray)
         
@@ -62,7 +64,19 @@ export default function App() {
             setProducts={setProducts}
           />
           <Sidebar />
-          <Home products={products}/>
+
+          <Routes>
+
+            <Route
+              path='/'        element={<Home products={products}/>}
+            />
+            <Route 
+              path='/products/:productId' element={<ProductView products={products} isFetching={isFetching}/>}
+              />
+          </Routes>
+          
+
+
           <Contact />
           <Footer/>
             

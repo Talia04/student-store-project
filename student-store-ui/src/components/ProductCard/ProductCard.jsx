@@ -10,6 +10,7 @@ const ProductCard = ({
   handleRemoveItemFromCart,
   showDescription
 }) => {
+  console.log(product)
   const { id, name, price, image, description } = product;
 
   const handleAddToCart = () => {
