@@ -48,7 +48,7 @@ export default function App() {
     );
     setProducts(filteredProducts);
   };
-
+  
   return (
     <div className="app">
       <BrowserRouter>
@@ -61,8 +61,8 @@ export default function App() {
             handleSearch={handleSearch} 
             allProducts={allProducts}
             setProducts={setProducts}
+            updateText={setSearchText}
           />
-          <Sidebar />
 
           <Routes>
 

@@ -7,6 +7,9 @@ export default function SubNavBar({searchText, setSearchText,handleSearch,setPro
         setSearchText("");
         setProducts(allProducts);
    }
+
+    
+
    return (
     <div className="sub-navbar">
 
