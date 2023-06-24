@@ -6,7 +6,6 @@ import Home from "../Home/Home"
 import axios from 'axios'
 import ProductGrid from "../ProductGrid/ProductGrid"
 import ProductCard from "../ProductCard/ProductCard"
-import Hero from "../Hero/Hero"
 import SubNavBar from "../SubNavBar/SubNavBar"
 import About from "../About/About.jsx"
 import Contact from "../Contact/Contact"
@@ -40,7 +39,7 @@ export default function App() {
 
     };
     fetchData();
-    
+    console.log(products);
   },[]); // Empty dependency array to ensure this effect only runs once on component mount
   
   const handleSearch = (event) => {
