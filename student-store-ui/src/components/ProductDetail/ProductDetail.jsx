@@ -6,11 +6,14 @@ import ProductView from '../ProductView/ProductView';
 
 export default function ProductDetail({
   handleAddItemToCart,
-  handleRemoveItemFromCart
+  handleRemoveItemFromCart,
+  quantity,
+  products
 }) {
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const { productId } = useParams();
+
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -40,6 +43,7 @@ export default function ProductDetail({
       <h1 className="product-id">Product #{productId}</h1>
       <ProductView
         product={product}
+        productId={productId}
         showDescription={true}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}

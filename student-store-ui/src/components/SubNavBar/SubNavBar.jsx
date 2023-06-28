@@ -8,14 +8,13 @@ export default function SubNavBar({searchText, setSearchText,handleSearch,setPro
         setProducts(allProducts);
    }
 
-    
-
    return (
     <div className="sub-navbar">
 
         <div className="content"> 
 
             <div className="row">
+                
                 <div className="search-bar">
                     <div className="search-box">
                         <input type="text" 
