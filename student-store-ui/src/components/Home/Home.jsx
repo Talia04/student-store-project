@@ -6,7 +6,11 @@ import Hero from "../Hero/Hero"
 import Categories from "../Categories/Categories"
 import "./Home.css"
 
-export default function Home ({ products }) {
+export default function Home ({
+    products,
+    handleAddItemToCart,
+    handleRemoveItemFromCart
+  }) {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
 
   // Filter the products based on the selected category
@@ -30,7 +34,10 @@ export default function Home ({ products }) {
         selectedCategory={selectedCategory}
         onSelectCategory={handleCategorySelect}
       />
-      <ProductGrid products={filteredByCategory} />
+      <ProductGrid products={filteredByCategory} 
+        handleAddItemToCart={handleAddItemToCart} 
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
+        />
       <About/>
     </div>
   );
