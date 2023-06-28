@@ -3,9 +3,9 @@ import ProductCard from '../ProductCard/ProductCard';
 import "./ProductGrid.css"
 
 const ProductGrid = ({
-  products
-//   handleAddItemToCart,
-//   handleRemoveItemFromCart
+  products,
+  handleAddItemToCart,
+  handleRemoveItemFromCart
 }) => {
   return (
     <div className="product-grid">
@@ -15,8 +15,8 @@ const ProductGrid = ({
           key={product.id}
           product={product}
           showDescription={false}
-        //   handleAddItemToCart={handleAddItemToCart}
-        //   handleRemoveItemFromCart={handleRemoveItemFromCart}
+          handleAddItemToCart={handleAddItemToCart}
+          handleRemoveItemFromCart={handleRemoveItemFromCart}
         />
       ))}
     </div>
