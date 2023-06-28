@@ -7,9 +7,11 @@
     "start": "vite"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router-dom": "^6.13.0"
   },
   "devDependencies": {
